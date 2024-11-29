@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col items-center py-8">
+    <div class="container mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-6">
+      <!-- Header -->
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">
+          Task Manager
+        </h1>
+
+        <button
+          id="logout"
+          class="px-6 py-2 bg-red-500 text-white rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          Logout
+        </button>
+      </div>
+
+      <!-- Task Creation Form -->
+      <form id="createTaskForm" class="space-y-4 mb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Task Title"
+            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+            required
+          />
+          <select
+            id="priority"
+            name="priority"
+            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+            required
+          >
+            <option value="" disabled selected>Priority</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <input
+            type="date"
+            id="deadline"
+            name="deadline"
+            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          Add Task
+        </button>
+      </form>
+
+      <!-- Filter and Search Form -->
+      <form id="filterForm" class="space-y-4 mb-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search by Title or Description"
+            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+          />
+          <select
+            id="filterPriority"
+            name="priority"
+            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+          >
+            <option value="">All Priorities</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <input
+            type="date"
+            id="filterDeadline"
+            name="dueBefore"
+            class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+        >
+          Apply Filters
+        </button>
+      </form>
+
+      <!-- Task List -->
+      <ul id="taskList" class="space-y-4">
+        <!-- Tasks will be dynamically added here -->
+      </ul>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./index.js"></script>
+  </body>
+</html>
