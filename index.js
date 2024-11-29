@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000/tasks";
+const API_URL = "https://taskmaster-project-hi5d.onrender.com/tasks";
 
 document.getElementById("logout").addEventListener("click", () => {
   localStorage.removeItem("token");

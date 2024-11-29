@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:8000";
+const apiUrl = "https://taskmaster-project-hi5d.onrender.com";
 
 const registerForm = document.getElementById("registerForm");
 
